@@ -12,7 +12,6 @@ const InputCom = () => {
     localStorage.setItem("todos", JSON.stringify(items));
   }, [items]);
 
-  console.log(items);
   const addItem = (e) => {
     e.preventDefault();
     localStorage.clear();
@@ -38,6 +37,10 @@ const InputCom = () => {
   };
 
   const handleUpdate = (id) => {
+    const updatingItem = items.filter((item) => {
+      return item.id === id ? true : false;
+    });
+    setupdatedText(updatingItem[0].text);
     setUpdateId(id);
     setEditing(true);
   };
@@ -54,7 +57,7 @@ const InputCom = () => {
     setEditing(false);
     setupdatedText("");
   };
-
+  console.log(updatedText);
   return (
     <>
       {isEditing ? (
@@ -67,6 +70,14 @@ const InputCom = () => {
               nsame=""
               id=""
             />
+            <button
+              className="update_btn"
+              onClick={() => {
+                setEditing(false);
+              }}
+            >
+              Back
+            </button>
             <button
               onClick={() => updateTextHandle(updateId)}
               className="update_btn"
@@ -95,7 +106,7 @@ const InputCom = () => {
           <div className="list_item_container">
             <ul>
               {items.map((item) => (
-                <div className="inside_item">
+                <div className="inside_item" key={item.id}>
                   <li>{item.text}</li>
                   <button onClick={() => handleDelte(item.id)}>❌</button>
                   <button onClick={() => handleUpdate(item.id)}>🖊️</button>
