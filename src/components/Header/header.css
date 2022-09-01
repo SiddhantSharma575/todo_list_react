@@ -1,0 +1,11 @@
+.todo_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 84px;
+    background-color: aqua;
+}
+
+.todo_header > h1 {
+    color: black;
+}

@@ -1,0 +1,96 @@
+.input_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.input_take {
+    margin-right: 1rem;
+    width: 300px;
+    padding: 0.7rem;
+    outline: none;
+    border: 2px solid aqua;
+    border-radius: 20px;
+}
+
+.btn_add {
+    background-color: aqua;
+    color: black;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1.5s;
+}
+
+.btn_add:hover {
+    background-color: rgb(11, 82, 82);
+}
+
+.list_item_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+}
+
+.inside_item {
+    width: 300px;
+    display: flex;
+    margin-bottom: 1rem;
+    justify-content: space-evenly;
+}
+
+.inside_item>li {
+    margin-right: 1rem;
+}
+
+.inside_item > button {
+    background-color: aqua;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 1.5s;
+}
+
+.inside_item > button:hover {
+    background-color: rgb(11, 82, 82);
+}
+
+.update_cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-direction: column;
+}
+
+.update_cont > input {
+    width: 300px;
+    padding: 0.7rem;
+    outline: none;
+    border: 2px solid aqua;
+    border-radius: 20px;
+}
+
+.update_btn {
+    background-color: aqua;
+    color: black;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1.5s;
+    margin-top: 2rem;
+}
+
+.update_btn:hover {
+    background-color: rgb(11, 82, 82);
+}
