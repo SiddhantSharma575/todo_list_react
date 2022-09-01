@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./inputCom.css";
 
+const getLocalItems = () => {
+  let list = localStorage.getItem("todos");
+  if (list) {
+    return JSON.parse(localStorage.getItem("todos"));
+  } else {
+    return [];
+  }
+};
+
 const InputCom = () => {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(getLocalItems());
   const [item, setItem] = useState("");
   const [isEditing, setEditing] = useState(false);
   const [updatedText, setupdatedText] = useState("");
@@ -10,18 +19,18 @@ const InputCom = () => {
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(items));
+    // setItems(JSON.parse(localStorage.getItem("todos")));
   }, [items]);
 
   const addItem = (e) => {
     e.preventDefault();
-    localStorage.clear();
     const savedItems = localStorage.getItem("todos");
-    setItems(savedItems ? JSON.parse(savedItems) : []);
+    setItems(JSON.parse(savedItems));
     if (item !== "") {
       setItems([
         ...items,
         {
-          id: items.length + 1,
+          id: JSON.parse(savedItems).length + 1,
           text: item,
         },
       ]);
